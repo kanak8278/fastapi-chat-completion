@@ -120,3 +120,19 @@ poetry run python test.py "Hello, how are you?"
 ```
 
 Modify the `NUM_THREADS` variable in `test.py` to control the number of concurrent requests.
+
+### Benchmarking with Apache Benchmark
+Install Apache Benchmark using the following command:
+```bash
+sudo apt install apache2-utils
+```
+Run:
+```bash
+ab -n 100 -c 10 http://localhost:8000/chat/completions
+```
+
+Output:
+```bash
+Benchmarking localhost (be patient)...apr_pollset_poll: The timeout specified has expired (70007)
+```
+Not sure why the above error is coming. But the server is working fine.
