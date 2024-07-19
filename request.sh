@@ -12,7 +12,7 @@ RESPONSE=$(curl -s -X POST "http://localhost:8000/chat/completions" \
      -d '{
        "model": "gemma-2b-oasst2-01",
        "messages": [
-         {"role": "user", "content": "'"$USER_CONTENT"'"}
+         {"role": "human", "content": "'"$USER_CONTENT"'"}
        ]
      }')
 

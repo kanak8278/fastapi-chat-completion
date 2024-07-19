@@ -8,8 +8,8 @@ import torch
 app = FastAPI()
 
 # Load the model and tokenizer
-tokenizer = AutoTokenizer.from_pretrained("google/gemma-2b")
-model = AutoModelForCausalLM.from_pretrained("google/gemma-2b")
+tokenizer = AutoTokenizer.from_pretrained("kanak8278/gemma-2b-oasst2-01")
+model = AutoModelForCausalLM.from_pretrained("kanak8278/gemma-2b-oasst2-01")
 
 # Define request and response schemas
 class Message(BaseModel):
@@ -39,11 +39,11 @@ async def create_chat_completion(request: ChatCompletionRequest):
     input_ids = tokenizer(input_text, return_tensors="pt")
 
     # Generate the model's response
-    outputs = model.generate(**input_ids)
+    outputs = model.generate(**input_ids, max_new_tokens=100)
     output_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
 
     # Create the response
-    response = [ChatCompletionResponse(role="assistant", content=output_text)]
+    response = [ChatCompletionResponse(role="gpt", content=output_text)]
 
     return response
 
