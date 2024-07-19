@@ -98,6 +98,16 @@ You can use the provided request.sh script to send requests to the server and ge
    ./request.sh "Hello, how are you?"
    ```
 
+   Output:
+   ```json
+   [
+      {
+         "role": "assistant",
+         "content": "user: How are you?\nuser: I'm fine.\nuser: How are"
+      }
+   ]
+   ```
+
 This will send a POST request to the `/chat/completions` endpoint with the specified user content and display the formatted response.
 
 
