@@ -121,6 +121,14 @@ poetry run python test.py "Hello, how are you?"
 
 Modify the `NUM_THREADS` variable in `test.py` to control the number of concurrent requests.
 
+**Result**
+1. Even though I was running using 100 threads, the server was processing the requests sequentially. I believe that could be due to model.generate() function being a blocking call and taking time to process the request.
+
+2. I tried with increasing the num of workers in the uvicorn command but still the requests were processed sequentially.
+
+3. Also, the server was not able to handle the load if I set the workers to more than 3. It was getting stuck and was not starting the server.
+
+
 ### Benchmarking with Apache Benchmark
 Install Apache Benchmark using the following command:
 ```bash
