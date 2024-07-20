@@ -65,6 +65,8 @@ model = AutoModelForCausalLM.from_pretrained("google/gemma-2b")
 Run `model.py` to download the model weights and save them. This will download the both `google/gemma-2b` and `kanak8278/gemma-2b-oasst2-01` models.
 
 
+[Weight&Biases Report](https://wandb.ai/kanak8278/gemma_finetune/reports/gemma2b-oss2--Vmlldzo4NzQ3Nzgy)
+
 ## Running the Server
 
 ### 1. Start the FastAPI Server
