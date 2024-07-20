@@ -62,6 +62,9 @@ tokenizer = AutoTokenizer.from_pretrained("google/gemma-2b")
 model = AutoModelForCausalLM.from_pretrained("google/gemma-2b")
 ```
 
+Run `model.py` to download the model weights and save them. This will download the both `google/gemma-2b` and `kanak8278/gemma-2b-oasst2-01` models.
+
+
 ## Running the Server
 
 ### 1. Start the FastAPI Server
